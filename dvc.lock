@@ -51,20 +51,20 @@ stages:
       isexec: true
     params:
       params.yaml:
-        model_building.n_estimators: 100
+        model_building.n_estimators: 1000
     outs:
     - path: model.pkl
       hash: md5
-      md5: 5c7592d54af31b309ee708be7f73a928
-      size: 7386906
+      md5: 75574935767f2e4211662740fa0d43e0
+      size: 73744907
       isexec: true
   model_evaluation:
     cmd: python3 src/models/model_eval.py
     deps:
     - path: model.pkl
       hash: md5
-      md5: 5c7592d54af31b309ee708be7f73a928
-      size: 7386906
+      md5: 75574935767f2e4211662740fa0d43e0
+      size: 73744907
       isexec: true
     - path: src/models/model_eval.py
       hash: md5
@@ -74,6 +74,6 @@ stages:
     outs:
     - path: metrics.json
       hash: md5
-      md5: 8e13b8201541ecebfb768f039ae94f93
-      size: 142
+      md5: 09cc73f0e89558c83d2f058dc8ef5c4f
+      size: 141
       isexec: true
